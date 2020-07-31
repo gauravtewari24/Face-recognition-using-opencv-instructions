@@ -1,0 +1,40 @@
+## INSTALLATION OF OPENCV4NODEJS
+
+> We use opencv4nodejs npm module for using opencv in nodejs.
+> Firstly Download and extract the opencv-master and opencv-contrib-master.
+> You should have Visual Studio installed with C++ Development Downloaded and also python and cmake.
+> Open Cmake-GUI and place the opencv-master folder and a new folder and then click configure.
+> Search for Extra_module and put opencv-contrib/modules path .
+> Optional : You can remove xfeatures2d (sometimes creates problem while installing opencv4nodejs).
+> Click configure and then generate .
+>> Click Open Project.
+>> Now Build the All Build File in CmakeTargets in Debug and Release mode.
+>> Similarly Build the install file .
+>> Then initialise the path in system variables.
+>> if u want to autobuild then only include the path of bin file in path and make a system varaible OPENCV_DIR="to folder containg bin and lib".
+>> If you want to manually build it (Works for me) then Specify the system variables as
+    OPENCV_INCLUDE_DIR=
+    OPENCV_BIN_DIR=
+    OPENCV_LIB_DIR=
+    OPENCV_DIR=
+>> Now you are all set to install opencv4nodejs
+>> run npm install opencv4nodejs
+>> It should work now.
+
+
+                                                              ##WORKING WITH OPENCV4NODEJS
+
+## CAPTURING USERS FACES AT REGISTRATION
+
+>> Here we have opened the cam with videocapture.
+>> Tip : Most of function in opencv start with cv2.functions() but in opencv4nodejs sometimes change it to function().
+>> Then we read the frames of camera using cam.read().
+>> Then we search a face in the frame, if it is present we save it to our database and using this we capture 50 frames containing users face.
+
+## AUTHENTICATION PROCESS
+
+>> Here in starting we apply the above process of registration to get a frame of users face and save it as a test image.
+>> Then we run our recognizer in which we first train our recognizer with all the images of different users in the database.
+>> Then we use the test image in our recognizer to authenticate a person and return the user.
+
+
